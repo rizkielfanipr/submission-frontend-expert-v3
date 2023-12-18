@@ -1,0 +1,319 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+  AppBar
+*/
+
+.app-bar {
+  padding: 8px 16px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.app-bar .app-bar-menu {
+  display: flex;
+  align-items: center;
+}
+
+.app-bar .app-bar-menu button {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.app-bar .app-bar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.app-bar .app-bar-brand h1 {
+  color: #db0000;
+  text-transform: none;
+  font-size: 22px;
+  user-select: none;
+}
+
+.app-bar .app-bar-navigation {
+  position: absolute;
+  top: 50px;
+  left: -180px;
+  width: 150px;
+  transition: all 0.3s;
+  padding: 8px;
+  background-color: white;
+  overflow: hidden;
+}
+
+.app-bar .app-bar-navigation.open {
+  left: 0;
+}
+
+.app-bar .app-bar-navigation ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  padding: 8px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+/* Dimensi Touch Target Minimal 44x44px */
+.app-bar .app-bar-menu button,
+.app-bar .app-bar-brand h1,
+.app-bar .app-bar-navigation ul li a,
+.restaurant-item a,
+.like {
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+
+/*
+  Main Content
+*/
+
+main {
+  padding: 32px;
+  flex: 1;
+}
+
+.content {
+  margin: 0 auto;
+  min-height: 100%;
+}
+
+.content .content-heading {
+  font-weight: normal;
+}
+
+
+/*
+  Restaurants
+*/
+
+.restaurants {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+/*
+  Restaurant Item
+*/
+
+.restaurant-item {
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.restaurant-item-header {
+  position: relative;
+}
+
+.restaurant-item .restaurant-item-header .restaurant-item-header-poster {
+  width: 100%;
+}
+
+.restaurant-item .restaurant-item-header .restaurant-item-header-rating {
+  position: absolute;
+  padding: 8px;
+  bottom: 20px;
+  left: 0;
+  display: inline-block;
+  background-color: black;
+  color: white;
+}
+
+.restaurant-item .restaurant-item-header .restaurant-item-header-rating .restaurant-item-header-rating-score {
+  margin-left: 10px;
+}
+
+.restaurant-item .restaurant-item-content {
+  padding: 16px;
+}
+
+.restaurant-item .restaurant-item-content h3 {
+  margin: 0 0 10px 0;
+}
+
+.restaurant-item .restaurant-item-content h3 a {
+  color: #db0000;
+  text-decoration: none;
+}
+
+.restaurant-item .restaurant-item-content p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; 
+  -webkit-box-orient: vertical;
+}
+
+/*
+  Restaurant
+*/
+
+.restaurant {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px 16px;
+}
+
+.restaurant .restaurant-poster {
+  width: 100%;
+  max-width: 400px;
+}
+
+.restaurant .restaurant-info h4 {
+  margin: 8px 0;
+}
+
+
+/*
+  Footer
+*/
+
+footer {
+  padding: 16px;
+}
+
+footer p {
+  text-align: center;
+  color: #aaaaaa;
+}
+
+footer p a {
+  display: inline-block;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 10px; 
+  color: #db0000;
+  text-decoration: none;
+}
+
+  
+  /*
+  Jumbotron
+  */
+
+  .jumbotron {
+    display: flex;
+    align-items: center;
+    min-height: 380px;
+    width: 100%;
+    text-align: center;
+    background-image: url("../public/images/hero-image_2.jpg");
+    background-position: center;
+    background-color: green;
+    border: 15px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .jumbotron::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+  }
+  
+  .jumbotron .jumbotron-inner {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .jumbotron-inner {
+    margin: 0 auto;
+    max-width: 800px;
+  }
+  
+  .jumbotron-title {
+    color: #fff;
+    font-weight: 500;
+    font-size: 36px;
+  }
+  
+  .jumbotron-text {
+    color: #fff;
+    margin-top: 16px;
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+/*
+   Like
+*/
+
+.like {
+  font-size: 18px;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background-color: #db0000;
+  color: white;
+  border: 0;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+Skip Link
+*/
+
+.skip-link {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  background-color: #bf1722;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+  text-decoration: none;
+  min-width: 44px; 
+  min-height: 44px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skip-link:focus {
+  top: 0;
+}
